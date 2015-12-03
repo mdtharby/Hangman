@@ -15,7 +15,7 @@ else: #if dictionary found, read file and chomp words
 
 def makeGuess(guessed): #guess checking and tracking of letters
         while True:
-                guess = raw_nput("Guess a letter: "))
+                guess = raw_nput("Guess a letter: ")
                 guess = guess.lower()
                 if len(guess) == 1 and guess.isalpha() and guess not in guessed:
                         return guess
