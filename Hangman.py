@@ -15,7 +15,7 @@ else: #if dictionary found, read file and chomp words
 
 def makeGuess(guessed): #guess checking and tracking of letters
         while True:
-                guess = input("Guess a letter: ")
+                guess = raw_nput("Guess a letter: "))
                 guess = guess.lower()
                 if len(guess) == 1 and guess.isalpha() and guess not in guessed:
                         return guess
@@ -24,7 +24,7 @@ def makeGuess(guessed): #guess checking and tracking of letters
                         
 
 def checkPlaying(): #playing status sanitation
-        playing = input("Would you like to play Hangman? [y/n]: ")
+        playing = raw_input("Would you like to play Hangman? [y/n]: ")
         playing = playing.lower()
         if len(playing) == 1 and playing == "y":
                 return True
@@ -64,7 +64,7 @@ while playing:
         while guessCounter is not 0 and ''.join(guessString) != wordToGuess: #running conditions
                 try: #wait for user input
                         waitString = "Guessed letters: " + guessedLetters +  " \nPress enter to continue."
-                        input(waitString)
+                        raw_input(waitString)
                 except SyntaxError: #pass
                         pass
                 g = str(makeGuess(guessedLetters)) #take a guess
