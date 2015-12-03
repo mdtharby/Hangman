@@ -16,6 +16,7 @@ else: #if dictionary found, read file and chomp words
 def makeGuess(guessed): #guess checking and tracking of letters
         while True:
                 guess = input("Guess a letter: ")
+                guess = guess.lower()
                 if len(guess) == 1 and guess.isalpha() and guess not in guessed:
                         return guess
                 else:
@@ -67,7 +68,6 @@ while playing:
                 except SyntaxError: #pass
                         pass
                 g = str(makeGuess(guessedLetters)) #take a guess
-                g = g.lower() #sanitize guess
                 guessedLetters += g #add guessed letters to guessed list
                 if g in wordToGuess: #check to see if guess is in in the word, if it is, add it to all instances, as this is not a string, I cannot use .replace
                         for i in range(len(wordToGuess)):
